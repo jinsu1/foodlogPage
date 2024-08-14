@@ -1,0 +1,135 @@
+ * {
+    font-family: "Noto Sans KR";
+    box-sizing: border-box;
+ }
+
+ a {
+    text-decoration: none;
+    color: #000;
+ }
+
+ .content-container {
+    max-width: 1200px;
+    margin: auto;
+    font-size:24px;
+    padding: 25px;
+ }
+
+ /*************** 상단 영역 ****************/
+
+ .header {
+    box-shadow: 0 1px 3px #0003;
+
+    /*상단 고정 */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9000;
+    height: 57px;
+
+    background-color: #fff;
+
+    .content-container {
+        display: flex;
+        height: 57px;
+        justify-content: space-between;
+
+        .icon-button {
+            font-size: 24px;
+            font-weight: 900;
+            padding: 0 12px;
+            transform: translateY(-100%);
+        }
+
+        .icon-button:hover {
+            background-color: #ddd;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+    }
+ }
+
+
+ /*************** 내용 영역 ****************/
+
+ .main {
+
+    padding-top: 57px;
+ }
+
+
+
+ /*************** 하단 영역 ****************/
+
+ .footer {
+    border-top: 1px solid #ddd;
+
+    .content-container {
+        display: flex;
+
+        @media only screen and (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        .footer-item {
+            flex: 1;
+            padding: 15px;
+
+            h3 {
+                font-size: 24px;
+                font-weight: 700;
+                margin: 22px 0;
+                text-transform: uppercase;
+            }
+
+            &:nth-child(1) p {
+                font-size: 15px;
+                line-height: 150%;
+                font-weight: 300;
+            }
+
+            &:nth-child(2) a {
+                display: flex;
+                margin: 20px 0;
+                padding: 0 10px;
+
+                img {
+                    width: 65px;
+                    height: 65px;
+                    object-fit: cover;
+                    margin-right: 10px;
+                }
+
+                blog-post-title {
+                    font-size: 15px;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+
+                blog-post-content {
+                    line-height: 1.2;
+                }
+            }
+
+            &:nth-child(3) .tags li {
+                display: inline-block;
+                background-color: #616161;
+                color:#fff;
+                font-size: 13px;
+                padding: 5px 10px;
+                margin-bottom: 8px;
+
+                &.black {
+                    background-color: #000;
+                }
+            }
+        }
+    }
+ }
